@@ -11,11 +11,5 @@ class Transacao(val valor: BigDecimal,
 
     constructor(valor: BigDecimal, tipo: TipoTransacao) : this(valor, "Indefinida", tipo)
 
-    companion object {
-        fun somarPorTipo(transacoes: List<Transacao>, tipo: TipoTransacao): BigDecimal {
-            return transacoes
-                    .filter { tipo == it.tipo }
-                    .fold(BigDecimal.ZERO, { soma, transacao -> soma.add(transacao.valor) })
-        }
-    }
+
 }
